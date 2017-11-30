@@ -1,0 +1,14 @@
+# get hello world image
+docker pull hello-world
+
+# run latest image
+docker run hello-world:latest
+
+# pull centOS
+docker pull centos
+
+# pull latest nginx
+docker pull nginx:latest
+
+# describe how nginx container is built 
+docker inspect nginx
