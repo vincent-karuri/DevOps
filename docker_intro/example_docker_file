@@ -1,0 +1,11 @@
+FROM debian:stable
+MAINTAINER vkaruri <vincentmkaruri@gmail.com>
+
+RUN apt-get update && RUN apt-get upgrade -y && apt-get install -y apache2 elinks openssh-server
+
+ENV MYVALE my-value
+
+EXPOSE 80
+EXPOSE 22
+
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
