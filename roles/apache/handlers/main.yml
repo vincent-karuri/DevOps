@@ -1,3 +1,0 @@
----
-- name: restart apache
-  servicee: name=httpd state=restarted
