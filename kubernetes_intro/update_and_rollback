@@ -1,0 +1,20 @@
+# list deployments
+kubectl get deployments
+
+# list running pods
+kubectl get pods
+
+# view image versions on pods
+kubectl describe pods
+
+# update version on pods
+kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+
+# verify update on pod
+kubectl rollout status deployments/kubernetes-bootcamp
+
+# rollback
+kubectl rollout undo deployments/kubernetes-bootcamp
+
+# confirm current image is changed
+kubectl describe pods 
