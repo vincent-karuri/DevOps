@@ -1,0 +1,13 @@
+- hosts: ansibleTestServer
+  vars:
+    project_location: /srv/long_running_python_process
+    program_name: long_running_process
+    supervisord_configs_path: /etc/supervisor/conf.d
+  tasks:
+    - name: Copy supervisord job file to remote
+      become: yes
+      become_user: root
+      template:
+         src: ./templates/run_process.j2
+         dest: "{{ supervisord_configs_path }}/run_process.conf"
+         owner: root

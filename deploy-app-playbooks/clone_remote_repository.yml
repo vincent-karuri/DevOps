@@ -1,0 +1,12 @@
+- hosts: ansibleTestServer
+  vars:
+    project_repo: git://github.com/tdhopper/long_running_python_process.git
+    project_location: /srv/long_running_python_process
+  tasks:
+    - name: Clone project code.
+      become: yes
+      become_user: root
+      git: 
+        repo: "{{ project_repo }}"
+        dest: "{{ project_location }}"
+        update: yes

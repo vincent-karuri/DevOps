@@ -1,0 +1,9 @@
+- name: Create virtual network
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Create virtual network task
+    azure_rm_virtualnetwork:
+      resource_group: ansibleResourceGroup
+      name: ansible-subnet
+      address_prefixes: "10.0.0.0/16"

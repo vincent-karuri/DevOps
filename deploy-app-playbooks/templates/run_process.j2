@@ -1,0 +1,8 @@
+[program: {{ program_name }}]
+environment=PATH="/home/vkaruri/.conda/envs:%(ENV_PATH)s"
+command=bash run.sh
+autostart=true
+directory={{project_location}}
+stderr_logfile=/var/log/{{program_name}}.err.log
+stdout_logfile=/var/log/{{program_name}}.out.log
+
