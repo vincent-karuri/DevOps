@@ -1,0 +1,18 @@
+# start one node cluster using minikube
+minikube start
+
+# deploy app and view deployments
+kubectl run kubernetes-bootcamp --image=docker.io/jocatalin/kubernetes-bootcamp:v1 --port=8080
+kubectl get deployments
+
+# use proxy to access cluster
+kubectl proxy
+curl http://localhost:8001/version
+
+# get our pod name and store it in POD_NAME variable
+export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo Name of the Pod: $POD_NAME
+
+# make api call to app running in pod
+export POD_NAME=$(kubectl get pods -o go-template --template '{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo Name of the Pod: $POD_NAME

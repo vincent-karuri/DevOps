@@ -1,0 +1,19 @@
+# run nginx and expose container ports on localhost
+docker run -d --name=WebServer1 -P nginx:latest
+
+# view port mappings
+docker port WebServer1 $CONTAINERPORT
+
+# another way to perform port redirection
+docker run -d -p 8080:80 --name=WebServer2 nginx:latest
+
+# test using elinks
+elinks http://127.0.0.1:8080
+
+
+# mount local volume on container
+docker run -d -p 8080:80 --name=WebServer3 -v /home/user/www:/usr/share/nginx/html nginx:latest
+
+
+# test using elinks
+elinks http://127.0.0.1:8080

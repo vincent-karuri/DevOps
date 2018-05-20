@@ -1,0 +1,14 @@
+# run nginx with given name
+docker run -d --name=LifeCycle1 nginx:latest
+
+# attach to container
+docker attach LifeCycle1
+
+# restart container
+docker restart LifeCycle1
+
+# execute command interactively on container
+docker exec -it LifeCycle1 /bin/bash
+
+# stop container
+docker stop LifeCycle1

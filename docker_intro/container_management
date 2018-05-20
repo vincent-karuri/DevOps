@@ -1,0 +1,5 @@
+# remove all containers 
+docker rm `docker ps -a - q`
+
+# force remove container image
+docker rmi -f
