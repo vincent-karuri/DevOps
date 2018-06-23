@@ -1,0 +1,15 @@
+# build docker file
+docker build -t vkaruri/myapache .
+
+# view set environment variable
+docker run -it vkaruri/myapache:latest /bin/bash
+echo $MYVALUE
+
+# run container based on created base image
+docker run -d vkaruri/myapache:latest 
+
+# get container IP
+docker inspect idea_love | grep IPAddr
+
+# test with elinks
+elinks http://172/17.0.2

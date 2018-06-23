@@ -1,0 +1,20 @@
+- name: Create virtual machine
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Create virtual machine task
+    azure_rm_virtualmachine:
+      resource_group: ansibleResourceGroup
+      name: testingAnsible
+      vm_size: Standard_DS1_v2
+      admin_username: vkaruri
+      ssh_password_enabled: false
+      ssh_public_keys:
+        - path: /home/your_user_name/.ssh/authorized_keys
+          key_data: your_key_data      
+      network_interfaces: ansibleNIC
+      image: 
+        offer: UbuntuServer
+        publisher: Canonical
+        sku: '16.04-LTS'
+        version: latest

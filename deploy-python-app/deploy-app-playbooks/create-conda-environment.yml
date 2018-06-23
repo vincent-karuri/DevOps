@@ -1,0 +1,9 @@
+- hosts: ansibleTestServer
+  vars:
+    project_location: /srv/long_running_python_process
+    miniconda_link_dir: /usr/local/anaconda
+  tasks:
+    - name: Create Conda environment from project environment file.
+      command: "{{miniconda_link_dir}}/bin/conda env update"
+      args:
+        chdir: "{{ project_location }}"

@@ -1,0 +1,4 @@
+- hosts: ansibleTestServer
+  roles:
+    - role: andrewrothstein.miniconda
+      

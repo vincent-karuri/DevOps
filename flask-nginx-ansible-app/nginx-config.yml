@@ -1,0 +1,9 @@
+- hosts: ansibleTestServer
+  user: vkaruri
+  sudo: yes
+  tasks:
+  - name: remove default nginx site
+    action: file path=/etc/nginx/sites-enabled/default state=absent
+
+  - name: write nginx.conf
+    action: template src=./templates/nginx.conf dest=/etc/nginx/nginx.conf

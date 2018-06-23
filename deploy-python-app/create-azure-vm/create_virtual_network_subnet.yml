@@ -1,0 +1,10 @@
+- name: Add subnet
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Add subnet task
+    azure_rm_subnet:
+      resource_group: ansibleResourceGroup
+      name: ansibleSubnet
+      address_prefix: "10.0.1.0/24"
+      virtual_network: ansible-subnet

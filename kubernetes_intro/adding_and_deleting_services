@@ -1,0 +1,14 @@
+# show all pods
+kubectl get pods
+
+# list services in the cluster
+kubectl get services
+
+# create new service and expose it to external traffic
+kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
+
+# list services in the cluster
+kubectl get services
+
+# deleting a service
+kubectl delete service -l run=kubernetes-bootcamp 

@@ -1,0 +1,10 @@
+ - hosts: ansibleTestServer
+   vars:
+     program_name: long_running_process
+   become: yes
+   become_user: root
+   tasks:
+   - name: Start job
+     supervisorctl:
+       name: "{{ program_name }}"
+       state: restarted

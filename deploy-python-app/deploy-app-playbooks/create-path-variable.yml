@@ -1,0 +1,8 @@
+- hosts: ansibleTestServer
+  tasks: 
+    - name: Copy bash script to root directory
+      copy:
+        src: ./create-path-variable.sh
+        dest: ~/create-path-variable.sh
+        force: yes
+        mode: 7777    

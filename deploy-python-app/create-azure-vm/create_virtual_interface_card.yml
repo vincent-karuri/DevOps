@@ -1,0 +1,12 @@
+- name: Create virtual network interface card
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: virtual NIC creation
+    azure_rm_networkinterface:
+      resource_group: ansibleResourceGroup
+      name: ansibleNIC
+      virtual_network: ansible-subnet
+      public_ip_name: ansiblePublicIP
+      security_group: sshNetworkSecurityGroup
+      subnet: ansibleSubnet

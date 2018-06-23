@@ -1,0 +1,9 @@
+- name: Create public IP address
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Create public IP address task
+    azure_rm_publicipaddress: 
+      resource_group: ansibleResourceGroup
+      allocation_method: Static
+      name: ansiblePublicIP
