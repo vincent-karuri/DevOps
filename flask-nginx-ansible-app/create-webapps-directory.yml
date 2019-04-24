@@ -1,0 +1,6 @@
+- hosts: ansibleTestServer
+  user: vkaruri
+  sudo: yes
+  tasks:
+  - name: create webapps directory
+    action: file dest=/srv/webapps state=directory
